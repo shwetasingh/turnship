@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>HemnesCamp - Education Responsive HTML Template - Documentation</title>		
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="HemnesCamp - Education Responsive HTML Template - Documentation">
+		<meta name="author" content="nhatthemes.com">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="assets/vendor/fontawesome/css/font-awesome.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="assets/css/docs.css">
+
+	</head>
+	<body data-spy="scroll" data-target=".nav-docs" data-offset="50">
+
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-full">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="top">
+							<ul>
+								<li>
+									<img class="logo" height="30" src="assets/img/logo.png" alt="Porto">
+								</li>
+								<li>
+									<span>Version: <strong class="version">1.0</strong></span>
+								</li>
+								<li class="hidden-xs">
+									<span>Created: <strong><i class="fa fa-calendar"></i> 12/26/2016</strong></span>
+								</li>
+								<li class="hidden-xs">
+									<span>Latest Update: <strong><i class="fa fa-calendar"></i> 12/26/2016</strong></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						
+					</div>
+				</div>
+			</nav>
+			
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>Documentation</h1>
+							<ul>
+								<li>
+									<span>Version: <strong class="version">1.0</strong></span>
+								</li>
+								<li class="hidden-xs">
+									<span>Created: <strong><i class="fa fa-calendar"></i> 12/26/2016</strong></span>
+								</li>
+								<li class="hidden-xs">
+									<span>Latest Update: <strong><i class="fa fa-calendar"></i> 12/26/2016</strong></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 center">
+							<p class="lead">Thank you for purchasing the HemnesCamp Template on ThemeForest. <br> If you have any questions that are beyond the scope of this help file, please feel free to email via our user page contact form or to our support forum at <a target="_blank" href="http://nhatthemes.com/">http://nhatthemes.com.</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<aside id="sidebar" class="sidebar">
+			<div class="nav-docs">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="#files_structure">Files Structure</a></li>
+					<li><a href="#javascript">Javascript</a></li>
+					<li><a href="#html_structure">HTML Structure</a></li>
+					<li><a href="#css_structure">CSS Structure and Skins</a></li>
+					<li><a href="#icons">Icons</a></li>
+					<li><a href="#newsletter">Newsletter</a></li>
+					<li><a href="#source_credits">Source &amp; Credits</a></li>
+				</ul>
+			</div>
+		</aside>
+		<div id="main" class="main">
+			<section id="files_structure">
+				<h2>Files Structure</h2>
+				<ul>
+					<li><code>/hemnescamp</code>
+						<ul>
+							<li>
+								<code>/css</code>
+								<ul>
+									<li><code>Template CSS</code></li>
+								</ul>
+							</li>
+							<li><code>/fonts</code> (Font Faces, Font Awesome, etc..)</li>
+							<li><code>/img</code> (All Images)</li>
+							<li><code>/js</code> (Template JS)</li>
+							<li><code>/licensing</code> (Licensing NhatThemes)</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section id="javascript">
+				<h2>Javascript</h2>
+
+				<p>It's possible to change the JS settings by extending the defaults from the template, that way is so much easier to update the theme changing only one JS file.<br>Here are a few samples on how to do that:</p><br>
+
+				<h4>Changing Settings</h4><br>
+
+				1) <strong>Config countdown:</strong>
+				(js/custom.js)
+<pre>
+// 11.0 countdown active code
+$('[data-countdown]').each(function () {
+    var $this = $(this),
+        finalDate = $(this).data('countdown');
+    $this.countdown(finalDate, function (event) {
+        $(this).find(".days").html(event.strftime("%D"));
+        $(this).find(".hours").html(event.strftime("%H"));
+        $(this).find(".minutes").html(event.strftime("%M"));
+        $(this).find(".seconds").html(event.strftime("%S"));
+    });
+});
+</pre>
+				<br><br>
+
+				2) <strong>Config and custom carousel:</strong>
+				(js/custom.js)
+<pre>
+var owl = $('.welcome_slides');
+owl.owlCarousel();
+owl.on('translate.owl.carousel', function (event) {
+    $('.owl-item .single_slide .slide_text h2').removeClass('animated').hide();
+    $('.owl-item .single_slide .slide_text h3').removeClass('animated').hide();
+    $('.owl-item .single_slide .slide_text .btn.btn-1').removeClass('animated').hide();
+    $('.owl-item .single_slide .slide_text .btn.btn-2').removeClass('animated').hide();
+})
+
+owl.on('translated.owl.carousel', function (event) {
+    $('.owl-item.active .single_slide .slide_text h2').addClass('animated custom_slideInUp').show();
+    $('.owl-item.active .single_slide .slide_text h3').addClass('animated custom_slideInUp_2').show();
+    $('.owl-item.active .single_slide .slide_text .btn.btn-1').addClass('animated custom_slideInUp_btn_1').show();
+    $('.owl-item.active .single_slide .slide_text .btn.btn-2').addClass('animated custom_slideInUp_btn_2').show();
+})
+</pre>
+				<br><br>
+
+				You can find all the custom.js file.
+			</section>
+
+			<section id="html_structure">
+				<h2>HTML Structure</h2>
+				<p>The template is based on <strong>Bootstrap 3</strong> Framework - <a href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+				<p>Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases.</p>
+				<br><br>
+<pre>
+&lt;section id=&quot;&quot; class=&quot;&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-md-6&quot;&gt;Level 2&lt;/div&gt;
+			&lt;div class=&quot;col-md-6&quot;&gt;Level 2&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+<br>
+<p>If you need more information, please visit this site: <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a></p>
+
+			</section>
+
+			<section id="css_structure">
+				<h2>CSS Structure and skins</h2>
+				<p>The organization of the CSS is one of our priorities.</p>
+				<p>These are the CSS file we're using in the template:</p><br>
+				<ul>
+					<li><code>color-changer.css</code> - (change color)
+					<li><code>bootstrap.css</code> - (Core bootstrap, core CSS, responsive,...)
+					<li><code>style.css</code> - (The basic layout structure styles)
+					<li><code>owl.carousel.css</code>, <code>owl.theme.css</code>, <code>owl.transitions.css</code> - OWL Carousel CSS()
+					<li><code>font-awesome.css</code> - (Use for font)
+				</li>
+			</section>
+
+			<section id="icons">
+				<h2>Icons</h2>
+				<p><strong>Font Awesome</strong> is a @font-face iconset that you can change size and color of the icons using CSS.<br><br>
+					If you need more information, please visit this site: <a href="http://fontawesome.io/">http://fontawesome.io/</a>
+				</p>
+<pre>
+&lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+...
+</pre>
+			</section>
+
+
+			<section id="newsletter">
+				<h2>Newsletter</h2>
+
+				If you want to use the newsletter you can config file <code>contact.php</code> Very, very easy.
+				<img class="img-responsive" src="assets/img/Screenshot_2.png" />
+			</section>
+
+			<section id="source_credits">
+				<h2>Source &amp; Credits</h2><br>
+				<div role="alert" class="alert alert-warning">
+					The images included in preview are for demonstration purposes and should always be replaced with your own work.
+				</div>
+				<ul>
+					<li>
+						<strong>Images:</strong>
+						<ul>
+							<li>Pexel: <a href="https://www.pexels.com/" target="_blank">https://www.pexels.com/</a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Fonts:</strong>
+						<ul>
+							<li>Google Fonts - <a href="http://www.google.com/webfonts" target="_blank">http://www.google.com/webfonts</a></li>
+							<li>Icons Font-face - <a href="http://fontawesome.io/<br><br>" target="_blank">http://fontawesome.io/<br><br></a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Scripts:</strong>
+						<ul>
+							<li>jQuery - <a href="http://www.jquery.com/" target="_blank">http://www.jquery.com/</a></li>
+							<li>Bootstrap 3 - <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a></li>
+							<li>jQuery gMap 2 - Google Maps API V3 - <a href="http://labs.mario.ec/jquery-gmap/" target="_blank">http://labs.mario.ec/jquery-gmap/</a></li>
+							<li>Owl Carousel - <a href="http://www.owlgraphic.com/owlcarousel2/" target="_blank">http://www.owlgraphic.com/owlcarousel2/</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<!-- Vendor -->
+		<script src="assets/vendor/jquery/jquery.js"></script>
+		<script src="assets/vendor/bootstrap/bootstrap.js"></script>
+		<script src="assets/js/docs.js"></script>
+
+	</body>
+</html>
