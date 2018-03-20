@@ -61,7 +61,7 @@
     :: 1.0 Web Fonts 
     ======================== */
     
-    @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700,800';
+    @import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Abril+Fatface:400,700,800';
     @font-face {
         font-family: 'montserratlight';
         src: url('fonts/montserrat-light.eot');
@@ -329,7 +329,12 @@
     ================================ */
     
     .logo_area {
-        padding: 29px 0;
+        //padding: 29px 0;
+    }
+
+    .logo-text {
+        font-family: 'Abril Fatface', cursive;
+        font-size: 30px;
     }
     
     .main_header_area {
